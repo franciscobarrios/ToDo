@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_finished_task">Done</string>
+    <string name="todo_icon_status">Task status</string>
+</resources>
