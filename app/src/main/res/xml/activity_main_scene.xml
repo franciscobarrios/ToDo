@@ -3,6 +3,7 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        android:id="@+id/main_transition"
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
@@ -12,9 +13,9 @@
         <KeyFrameSet>
 
             <KeyAttribute
+                android:rotation="0"
                 android:translationY="150dp"
                 motion:framePosition="0"
-                android:rotation="0"
                 motion:motionTarget="@+id/fab_new_task" />
 
             <KeyAttribute
@@ -23,9 +24,9 @@
                 motion:motionTarget="@+id/fab_new_task" />
 
             <KeyAttribute
+                android:rotation="1080"
                 android:translationY="15dp"
                 motion:framePosition="75"
-                android:rotation="1080"
                 motion:motionTarget="@+id/fab_new_task" />
 
             <KeyAttribute
@@ -88,17 +89,54 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
             motion:layout_constraintEnd_toEndOf="parent" />
+
         <Constraint
-            motion:layout_constraintVertical_bias="0.0"
+            android:id="@+id/nav_host_fragment"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/nav_view"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintBottom_toTopOf="@+id/nav_view"
-            motion:layout_constraintHorizontal_bias="0.0"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:id="@+id/nav_host_fragment" />
+            motion:layout_constraintVertical_bias="0.0" />
 
     </ConstraintSet>
+
+    <Transition
+        android:id="@+id/fab_transition"
+        motion:autoTransition="animateToEnd"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/end"
+        motion:duration="300"
+        motion:motionInterpolator="easeIn">
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:scaleX="1"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/fab_new_task" />
+
+            <KeyAttribute
+                android:scaleY="1"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/fab_new_task" />
+
+            <KeyAttribute
+                android:scaleX="40"
+                android:translationX="130dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/fab_new_task" />
+
+            <KeyAttribute
+                android:scaleY="40"
+                android:translationY="130dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/fab_new_task" />
+
+        </KeyFrameSet>
+
+    </Transition>
 
 </MotionScene>
