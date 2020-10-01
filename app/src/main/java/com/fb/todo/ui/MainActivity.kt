@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-        setUpTransition()
+        //setUpTransition()
         binding.fabNewTask.setOnClickListener {
 
             binding.container.startLayoutAnimation()
