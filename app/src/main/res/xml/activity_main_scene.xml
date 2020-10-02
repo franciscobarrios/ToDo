@@ -112,8 +112,8 @@
         android:id="@+id/fab_transition"
         motion:constraintSetEnd="@+id/fab_end"
         motion:constraintSetStart="@+id/fab_start"
-        motion:duration="300"
-        motion:motionInterpolator="easeIn">
+        motion:duration="600"
+        motion:motionInterpolator="cubic(0.91,0,1,1)">
 
         <OnClick motion:targetId="@+id/fab_new_task" />
 
@@ -121,15 +121,18 @@
 
             <KeyAttribute
                 android:scaleX="1"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/fab_new_task" />
+            <KeyAttribute
                 android:scaleY="1"
                 motion:framePosition="0"
                 motion:motionTarget="@+id/fab_new_task" />
-
             <KeyAttribute
-                android:scaleX="100"
-                android:scaleY="100"
-                android:translationX="30dp"
-                android:translationY="30dp"
+                android:scaleX="30"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/fab_new_task" />
+            <KeyAttribute
+                android:scaleY="30"
                 motion:framePosition="100"
                 motion:motionTarget="@+id/fab_new_task" />
 
@@ -138,6 +141,7 @@
     </Transition>
 
     <ConstraintSet android:id="@+id/fab_start">
+
         <Constraint
             android:id="@+id/fab_new_task"
             android:layout_width="wrap_content"
@@ -148,10 +152,11 @@
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/fab_end">
+
         <Constraint
             android:id="@+id/fab_new_task"
-            android:layout_width="800dp"
-            android:layout_height="800dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment"
             motion:layout_constraintEnd_toEndOf="parent" />
 

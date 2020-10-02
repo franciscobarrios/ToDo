@@ -11,7 +11,6 @@ import com.fb.todo.databinding.ActivityMainBinding
 import com.fb.todo.ui.activity.TaskDetailActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
